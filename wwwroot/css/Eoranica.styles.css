@@ -1,0 +1,105 @@
+﻿body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+body {
+    margin-bottom: 60px;
+    overflow-x: hidden;
+}
+
+.dropdown-menu {
+    width: fit-content !important;
+    min-width: 100% !important;
+}
+.nav-costum {
+    height: 60px;
+    background-color: steelblue;
+    font-weight: 600;
+    color: white;
+    padding: 0;
+    position: relative;
+    z-index: 100;
+}
+
+.navbar-collapse {
+    width: 100%;
+    background-color: steelblue;
+    opacity: 1;
+    transition: 2s;
+}
+
+.expand-button-costum {
+    color: black;
+}
+
+.icon-menu-custom {
+    margin-top: 15px;
+}
+
+.navbar-toggler:focus {
+    text-decoration: none;
+    border: 1px solid cornflowerblue;
+    box-shadow: 0 0 0 0;
+}
+
+.dropdown-costum {
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-costum a {
+    transition: 0.5s;
+}
+
+.nav-link:focus, .nav-link:hover {
+    color: white;
+    background-color: steelblue;
+}
+
+.nav-costum a:hover {
+    color: #384f79;
+    background-color: steelblue;
+}
+
+.navbar-brand {
+    color: white;
+    padding: 15px;
+}
+
+.navbar-expand-sm .navbar-nav .nav-link {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    transition: 0.5s;
+}
+
+.dropdown-menu {
+    color: steelblue;
+}
+
+.dropdown-toggle, .nav-item {
+    transition: 3s;
+}
+
+.navbar-nav .dropdown-menu {
+    background-color: steelblue;
+}
+
+.footer {
+    background-color: steelblue;
+    color: white;
+}
+
+    .footer .container {
+        text-align: center;
+        color: white;
+    }
+
+        .footer .container a {
+            /*text-decoration:none;*/
+            color: white;
+        }

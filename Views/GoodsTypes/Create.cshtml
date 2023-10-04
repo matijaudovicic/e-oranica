@@ -1,0 +1,39 @@
+﻿@model Eoranica.Models.GoodsType
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row row-udpate_create mx-auto">
+    <div class="col-md-6 mx-auto col-update_create">
+        <h1>Kreiraj novu vrstu dobara!</h1>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group  form-group-update_create">
+                <label asp-for="Name" class="control-label">Naziv:</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group  form-group-update_create">
+                <label asp-for="Quantity" class="control-label">Količina:</label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group  form-group-update_create">
+                <label asp-for="MeasurementUnit" class="control-label">Mjerna jedinica:</label>
+                <select asp-for="MeasurementUnit" class="form-control">
+                    <option value="" disabled selected>Odaberi jedinicu</option>
+                    <option value="kg">kg</option>
+                    <option value="piece">Piece</option>
+                </select>
+                <span asp-validation-for="MeasurementUnit" class="text-danger"></span>
+            </div>
+            <div class="form-group submit-update_create me-auto">
+                <input type="submit" value="Kreiraj" class="btn" />
+            </div>
+        </form>
+        <div class="btn back-to-list">
+            <a asp-action="Index">Natrag</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+﻿@model Eoranica.Models.IncomeAndExpense
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="row row-udpate_create mx-auto">
+    <div class="col-md-6 mx-auto col-update_create">
+        <h1>Detalji prihoda i rashoda</h1>
+
+        <dl class="row form-group-update_create">
+        <dt class = "col-sm-4">
+            Količina biljaka:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.AmountOfPlants)
+        </dd>
+        <dt class = "col-sm-4">
+            Cijena:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Price) KM
+        </dd>
+        <dt class = "col-sm-4">
+           Datum sadnje:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.DateOfPlanting)
+        </dd>
+        <dt class = "col-sm-4">
+           Datum kraja sadnje:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.EndDateOfPlanting)
+        </dd>
+        <dt class = "col-sm-4">
+           Količina dobara:
+        </dt>
+        <dd class = "col-sm-8">
+                @Html.DisplayFor(model => model.AmountOfGoods)  -  @Html.DisplayFor(model => model.Plant.GoodsType.Name)
+        </dd>
+        <dt class = "col-sm-4">
+            Biljka:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Plant.Name)
+
+        </dd>
+        <dt class = "col-sm-4">
+            Parcela:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Plot.Name)
+
+        </dd>
+    </dl>
+
+    <div class="btn edit-data-btn">
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Uredi</a>
+    </div>
+    <div class="btn back-to-list">
+        <a href="javascript:history.back()">Natrag</a>
+    </div>
+
+    </div>
+</div>

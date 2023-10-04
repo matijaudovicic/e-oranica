@@ -1,0 +1,53 @@
+﻿@model Eoranica.Models.Person
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="row row-udpate_create mx-auto">
+    <div class="col-md-6 mx-auto col-update_create">
+        <h1>Detalji osobe:</h1>
+
+        <dl class="row form-group-update_create">
+        <dt class = "col-sm-4">
+            Ime i prezime
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt class = "col-sm-4">
+           Broj telefona:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt class = "col-sm-4">
+            Email:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-4">
+           Adresa:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+        <dt class = "col-sm-4">
+            Grad:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.City.Name)
+          
+        </dd>
+ 
+    </dl>
+
+    <div class="btn edit-data-btn">
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Uredi</a>
+    </div>
+    <div class="btn back-to-list">
+        <a href="javascript:history.back()">Natrag</a>
+    </div>
+</div>
+</div>
+

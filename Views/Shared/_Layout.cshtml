@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - eOranica</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<link href="~/css/delete.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Eoranica.styles.css" />
+    <link rel="stylesheet" href="~/css/create_update.css" />
+    <link rel="stylesheet" href="~/css/sidebar.css" />
+    <link href="~/css/index.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Eoranica.styles.css" asp-append-version="true" />
+    <script src="https://kit.fontawesome.com/f4a15ba672.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="~/css/home.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+   
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm nav-costum  ">
+            <div class="container-fluid" style="margin:auto; padding:0;">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">eOranica</a>
+                <button class="navbar-toggler expand-button-costum btn" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                    <span class="navbar-toggler-icon"><i class="fa-solid fa-bars fa-lg icon-menu-custom"></i></span>
+                </button>
+
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav nav  nav-left flex-grow-1 ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" role="button" asp-area="" asp-controller="People" asp-action="Index">
+                                Osobe
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" role="button" asp-area="" asp-controller="Orders" asp-action="Index">
+                                Narudzbe
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" role="button" asp-area="" asp-controller="Plants" asp-action="Index">
+                                Biljke
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" role="button" asp-area="" asp-controller="Grounds" asp-action="Index">
+                                Zemlja
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - eOranica - Privacy
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿@using Microsoft.EntityFrameworkCore;
+@model Eoranica.Models.Order
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="row row-udpate_create mx-auto">
+    <div class="col-md-6 mx-auto col-update_create">
+        <h1>Detalji narudžbe:</h1>
+
+        <dl class="row form-group-update_create">
+        <dt class = "col-sm-4">
+            Biljka
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Plant.Name)
+                
+        </dd>
+        <dt class = "col-sm-4">
+            Količina:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.AmountOfGoods) 
+                @{
+                    var dbContextOptions = new DbContextOptionsBuilder<EoranicaContext>()
+                    .UseSqlServer("YourConnectionString") // Replace "YourConnectionString" with the actual connection string
+                    .Options;
+                    var dbContext = new EoranicaContext(dbContextOptions);
+                    var goodsType = dbContext.GoodsTypes.Find(Model.Plant.GoodsTypeId);
+                }
+              
+
+
+                @if (goodsType != null)
+                {
+                    if (goodsType.MeasurementUnit == "kg")
+                    {
+                        <span>kilogram</span>
+                    }
+                    else if (goodsType.MeasurementUnit == "piece")
+                    {
+                        <span>komad</span>
+                    }
+                }
+                else
+                {
+                    <span>Measurement unit not available</span>
+                }
+        </dd>
+        <dt class = "col-sm-4">
+           Naručitelj:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Customer.FullName)
+                
+        </dd>
+        <dt class = "col-sm-4">
+            Status narudžbe:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.OrderStatus.Name)
+               
+        </dd>
+
+    </dl>
+
+        <div class="btn edit-data-btn">
+            <a asp-action="Edit" asp-route-id="@Model?.Id">Uredi</a>
+        </div>
+        <div class="btn back-to-list">
+            <a href="javascript:history.back()">Natrag</a>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,117 @@
+﻿
+.card-modify {
+   
+    position: unset;
+    border: 0;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    --bs-table-accent-bg: lightsteelblue;
+    color: var(--bs-table-striped-color);
+}
+
+tbody, td, tfoot {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    background-color: lightsteelblue;
+    color: white;
+}
+
+.table-modify {
+    color: white;
+    margin: 0.8rem;
+    text-align: left;
+    position: relative; /* Ensure the table is positioned relatively */
+  
+}
+
+.icons-modify {
+    text-decoration: none;
+    color: white;
+    padding-left: 12px;
+}
+
+    .icons-modify:hover {
+        color: cornflowerblue;
+    }
+
+.icons-modify-delete:hover {
+    color: red;
+}
+
+.add-record {
+    float: right;
+    color: white;
+    background-color: steelblue;
+}
+
+    .add-record:hover {
+        background-color: steelblue;
+        font-weight: bold;
+        color: #a2ccdd;
+        border: 0;
+        padding: 0.5rem 0.9rem;
+    }
+
+.index-header {
+   
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+.index-header-title {
+    width: 50%;
+    display: inline;
+    float: left;
+    color: cornflowerblue;
+}
+
+.index-header-add {
+    width: 50%;
+    display: inline;
+}
+
+.thead-modify {
+    color: white;
+    background-color: steelblue;
+    border-bottom: 1px solid white;
+}
+.dataTable, .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing {
+    color: cornflowerblue !important;
+}
+
+table.dataTable.no-footer {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+table.dataTable {
+    margin: 3rem auto !important;
+}
+.dataTables_wrapper .dataTables_filter input:focus {
+    border-color: #59854c;
+    box-shadow: 0 0 5px #59854c;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    background-image: linear-gradient(to right, cornflowerblue, steelblue) !important;
+    color: white !important;
+    border: 0 !important;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    color: white !important;
+}
+
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+        background-image: linear-gradient(to right, rgba(129, 190, 254, 0.5), rgba(69, 160, 255, 0.5)) !important;
+        color: #33E9FF !important;
+        border: 0 !important;
+    }
+
+
+
+.last_td {
+    width: 9rem !important;
+    text-align: right !important;
+}

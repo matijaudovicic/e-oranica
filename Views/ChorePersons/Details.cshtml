@@ -1,0 +1,50 @@
+﻿@model Eoranica.Models.ChorePerson
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="row row-udpate_create mx-auto">
+    <div class="col-md-6 mx-auto col-update_create">
+        <h1>Detalji statusa posla</h1>
+
+        <dl class="row form-group-update_create m-auto">
+        <dt class = "col-sm-4">
+           Opis
+        </dt>
+            <dd class="col-sm-8 ">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+            <dt class="col-sm-4 ">
+            Zadatak
+        </dt>
+            <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Chore.Name)
+
+        </dd>
+            <dt class="col-sm-4">
+            Status zadatka
+        </dt>
+            <dd class="col-sm-8 ">
+            @Html.DisplayFor(model => model.OrderStatus.Name)
+
+        </dd>
+            <dt class="col-sm-4">
+            Naručitelj
+        </dt>
+            <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Person.FullName)
+
+        </dd>
+    </dl>
+        <div class="btn edit-data-btn">
+            <a asp-action="Edit" asp-route-id="@Model?.Id">Uredi</a>
+        </div>
+
+
+        <div class="btn back-to-list">
+            <a href="javascript:history.back()">Natrag</a>
+        </div>
+    </div>
+
+</div>

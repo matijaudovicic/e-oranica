@@ -1,0 +1,57 @@
+﻿main {
+}
+
+.hero-text .display-4 {
+    color: black;
+    font-size: 40px;
+    margin-top: 30px;
+    font-weight: 200;
+}
+
+.dugme {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.btn:hover {
+    background-color: lightsteelblue;
+    color: white;
+}
+
+.statistika {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.kartica {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    border-radius: 8px;
+    background-image: linear-gradient(to right, #4682B4, #6CA5D6);
+}
+
+.inner {
+    margin-left: 92px;
+    margin-top: 20px;
+}
+
+.ikona {
+    margin-right: 15px;
+    font-size: 50px;
+}
+
+.home-tablica {
+    background-image: linear-gradient(to right, #4c7141, #6f9665) !important;
+    color: white;
+}

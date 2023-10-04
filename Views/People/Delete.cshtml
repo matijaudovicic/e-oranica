@@ -1,0 +1,56 @@
+﻿@model Eoranica.Models.Person
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="col-update_create">
+    <h1>Izbrisati</h1>
+
+    <h3>Jeste li sigurni da želite ovo izbrisati?</h3>
+    <div>
+        <h4>Osoba</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-4">
+                Ime i prezime:
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.FullName)
+            </dd>
+            <dt class="col-sm-4">
+                Broj telefona:
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+            <dt class="col-sm-4">
+                Email:
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt class="col-sm-4">
+                Adresa:
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Adress)
+            </dd>
+            <dt class="col-sm-4">
+                Grad:
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.City.Name)
+            </dd>
+     
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <div class="btn back-to-list">
+                <a href="javascript:history.back()">Natrag</a>
+            </div>
+            <input type="submit" value="Izbrisati" class="btn edit-data-btn delete-btn" />
+        </form>
+    </div>
+</div>

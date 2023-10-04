@@ -1,0 +1,25 @@
+﻿@model Eoranica.Models.ContractPlot
+
+<h2>Create Contract Plot</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="ContractId">Contract</label>
+        <select asp-for="ContractId" class="form-control" asp-items="ViewBag.ContractId"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="PlotId">Plot</label>
+        <select asp-for="PlotId" class="form-control" asp-items="ViewBag.PlotId"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="MonthlyPayment">Monthly Payment</label>
+        <input asp-for="MonthlyPayment" class="form-control" />
+        <span asp-validation-for="MonthlyPayment" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Price">Price</label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

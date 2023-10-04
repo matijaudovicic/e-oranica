@@ -1,0 +1,67 @@
+﻿@model Eoranica.Models.IncomeAndExpense
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="col-update_create">
+    <h1>Izbrisati</h1>
+
+    <h3>Jeste li sigurni da želite ovo izbrisati?</h3>
+    <div>
+        <h4>Prihodi i rashodi</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Količina biljaka: 
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.AmountOfPlants)
+            </dd>
+            <dt class="col-sm-2">
+                Cijena: 
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt class="col-sm-2">
+                Datum sadnje:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DateOfPlanting)
+            </dd>
+            <dt class="col-sm-2">
+                Datum završetka sadnje:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.EndDateOfPlanting)
+            </dd>
+            <dt class="col-sm-2">
+                Količina robe: 
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.AmountOfGoods)
+            </dd>
+            <dt class="col-sm-2">
+                Biljka: 
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Plant.Name)
+            </dd>
+            <dt class="col-sm-2">
+                Zemljište: 
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Plot.Name)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <div class="btn back-to-list">
+                <a href="javascript:history.back()">Natrag</a>
+            </div>
+            <input type="submit" value="Izbrisati" class="btn edit-data-btn delete-btn" />
+        </form>
+    </div>
+</div>

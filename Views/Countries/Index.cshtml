@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Eoranica.Models.Country>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="sidebar position-absolute">
+                <ul class="list-sidebar">
+                    <li class="list-sidebar-item"><a id="sidebar-item-id-1" class="list-sidebar-link d-flex align-items-center" asp-area="" asp-controller="Plots" asp-action="Index"><span data-txt-key="txtSidebarItem1">Parcele<br /></span></a></li>
+                    <li class="list-sidebar-item"><a id="sidebar-item-id-2" class="list-sidebar-link d-flex align-items-center" asp-area="" asp-controller="Grounds" asp-action="Index"><span data-txt-key="txtSidebarItem2">Tla</span></a></li>
+                    <li class="list-sidebar-item"><a id="sidebar-item-id-3" class="list-sidebar-link d-flex align-items-center" asp-area="" asp-controller="Terrains" asp-action="Index"><span data-txt-key="txtSidebarItem3">Tereni</span></a></li>
+                    <li class="list-sidebar-item"><a id="sidebar-item-id-4" class="list-sidebar-link d-flex align-items-center" asp-area="" asp-controller="Cities" asp-action="Index"><span data-txt-key="txtSidebarItem4">Grad<br /></span></a></li>
+					<li class="list-sidebar-item"><a id="sidebar-item-id-4" class="list-sidebar-link d-flex align-items-center active" asp-area="" asp-controller="Countries" asp-action="Index"><span data-txt-key="txtSidebarItem5">Država<br /></span></a></li>
+                    <li class="list-sidebar-item"><a id="sidebar-item-id-4" class="list-sidebar-link d-flex align-items-center" asp-area="" asp-controller="Contracts" asp-action="Index"><span data-txt-key="txtSidebarItem6">Ugovori<br /></span></a></li>
+                    <li class="list-sidebar-item"><a id="sidebar-item-id-4" class="list-sidebar-link d-flex align-items-center" asp-area="" asp-controller="ContractPlots" asp-action="Index"><span data-txt-key="txtSidebarItem7">Ugovori za parcele<br /></span></a></li>
+                </ul>
+            </div>
+        </div>
+
+		<div class="col-md-8">
+			<div class="table-responsive card card-modify">
+				<div class="index-header">
+
+					<div class="index-header-title">
+						<h2>Gradovi</h2>
+					</div>
+					<div class="index-header-add">
+						<a asp-action="Create" class="btn add-record"><i class="fa-solid fa-plus"></i>  Dodaj novi!</a>
+					</div>
+
+				</div>
+
+				<table class="table table-rounded table-striped table-hover table-modify table-borderless" id="table-cities">
+					<thead class="thead-modify">
+						<tr>
+							<th>
+								Naziv
+							</th>
+							<th class="last_td">Uredi, Obriši</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var item in Model)
+						{
+							<tr>
+								<td>
+									@Html.DisplayFor(modelItem => item.Name)
+
+								</td>
+								<td class="last_td">
+									<a asp-action="Edit" asp-route-id="@item.Id" class="icons-modify"><i class="fa-solid fa-pen-to-square"></i></a>
+									<a asp-action="Delete" asp-route-id="@item.Id" class="icons-modify icons-modify-delete"><i class="fa-solid fa-trash"></i></a>
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $(document).ready(function () {
+        $('#table-cities').DataTable({
+            "language": {
+                "sEmptyTable": "Nema dostupnih podataka",
+                "sInfo": "Prikazano _START_ do _END_ od ukupno _TOTAL_ zapisa",
+                "sInfoEmpty": "Prikazano 0 do 0 od 0 zapisa",
+                "sInfoFiltered": "(filtrirano iz ukupno _MAX_ zapisa)",
+                "sInfoPostFix": "",
+                "sInfoThousands": ",",
+                "sLengthMenu": "Prikaži _MENU_ zapisa po stranici",
+                "sLoadingRecords": "Učitavanje...",
+                "sProcessing": "Obrada...",
+                "sSearch": "Pretraga:",
+                "sZeroRecords": "Nema rezultata",
+                "oPaginate": {
+                    "sFirst": "Prva",
+                    "sPrevious": "Prethodna",
+                    "sNext": "Sljedeća",
+                    "sLast": "Posljednja"
+                },
+                "oAria": {
+                    "sSortAscending": ": aktivirajte za sortiranje stupca uzlazno",
+                    "sSortDescending": ": aktivirajte za sortiranje stupca silazno"
+                }
+            }
+        });
+    });
+</script>
+

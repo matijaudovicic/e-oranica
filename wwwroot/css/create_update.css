@@ -1,0 +1,93 @@
+﻿.col-update_create {
+    padding: 30px;
+    border-radius: 30px;
+    color: black;
+    margin: 30px;
+}
+
+    .col-update_create h1 {
+        text-align: center;
+    }
+
+.form-group-update_create {
+    margin: 10px;
+}
+
+.form-group-update_create input, .form-group-update_create select {
+    border: 1.5px black solid;
+}
+.form-group-update_create input:focus, .form-group-update_create select:focus {
+    background-color: white;
+    box-shadow: 0px 0px 5px 0.3px black;
+    border: 0.5px solid black;
+}
+
+.submit-update_create input {
+    float: right;
+    background-color: steelblue;
+    color: white;
+    margin: 10px;
+    transition: 0s;
+}
+.submit-update_create input:hover {
+    background-color: steelblue;
+    color: white;
+}
+.back-to-list {
+    text-decoration: none;
+    margin: 10px;
+    background-color: red;
+    transition: 0s;
+}
+.back-to-list a {
+    text-decoration: none;
+    color: white;
+}
+
+.back-to-list:hover {
+    background-image: linear-gradient(to right, red, red);
+}
+.edit-data-btn {
+    float: right;
+    background: #59854c;
+    color: #ecda49;
+    text-decoration: none;
+    margin: 10px;
+    transition: 0.1s;
+}
+    .edit-data-btn a {
+        text-decoration: none;
+        color: #ecda49;
+        transition: 0.1s;
+    }
+    .edit-data-btn:hover {
+     
+        font-weight: bold;
+        border: 0;
+        color: #ecda49 !important;
+        background-image: linear-gradient(to right, #59854c, #37512f);
+        padding: 0.5rem 0.9rem;
+    }
+
+    .validation-faled-text {
+        color: red;
+        text-shadow: 1px 0.5px 1px #800000;
+    }
+.icons-modify-in-details {
+    text-decoration: none;
+    color: #59854c !important;
+    padding-left: 12px;
+}
+    .icons-modify-in-details:hover {
+        color: #ecda49 !important;
+    }
+.delete-btn {
+    background-color: red;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+    .delete-btn:hover {
+        background-color: darkred;
+    }
+

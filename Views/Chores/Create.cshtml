@@ -1,0 +1,36 @@
+﻿@model Eoranica.Models.Chore
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row row-udpate_create mx-auto">
+    <div class="col-md-6 mx-auto col-update_create">
+        <h1>Kreiraj novi posao!</h1>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group form-group-update_create">
+                <label asp-for="Name" class="control-label">Naziv:</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group form-group-update_create">
+                <label asp-for="Description" class="control-label">Opis:</label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group form-group-update_create">
+                <label asp-for="Duration" class="control-label">Trajanje u minutama:</label>
+                <input asp-for="Duration" class="form-control" />
+                <span asp-validation-for="Duration" class="text-danger"></span>
+            </div>
+            <div class="form-group submit-update_create me-auto">
+                <input type="submit" value="Kreiraj" class="btn" />
+            </div>
+        </form>
+        <div class="btn back-to-list">
+            <a href="javascript:history.back()">Natrag</a>
+        </div>
+    </div>
+</div>
+

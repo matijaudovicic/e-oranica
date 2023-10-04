@@ -1,0 +1,61 @@
+﻿@model Eoranica.Models.Contract
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="col-update_create">
+    <h1>Izbrisati</h1>
+
+    <h3>Jeste li sigurni da želite ovo izbrisati?</h3>
+    <div>
+        <h4>Ugovor</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Naziv: 
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                Datum zaključenja: 
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DateOfConclusion)
+            </dd>
+            <dt class="col-sm-2">
+                Datum isteka: 
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DateOfExpiration)
+            </dd>
+            <dt class="col-sm-2">
+                Korisnik: 
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Beneficiary.FullName)
+            </dd>
+            <dt class="col-sm-2">
+                Davatelj: 
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Provider.FullName)
+            </dd>
+            <dt class="col-sm-2">
+                Tip ugovora:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ContractType)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <div class="btn back-to-list">
+                <a href="javascript:history.back()">Natrag</a>
+            </div>
+            <input type="submit" value="Izbrisati" class="btn edit-data-btn delete-btn" />
+        </form>
+    </div>
+</div>

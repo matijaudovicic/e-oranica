@@ -1,0 +1,89 @@
+﻿@model Eoranica.Models.Plant
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="col-update_create">
+    <h1>Izbrisati</h1>
+
+    <h3>Jeste li sigurni da želite ovo izbrisati?</h3>
+    <div>
+        <dl class="row">
+            <dt class="col-sm-2">
+                Naziv: 
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                Opis: 
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="col-sm-2">
+                Naziv podvrste: 
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SubspeciesName)
+            </dd>
+            <dt class="col-sm-2">
+                Količina
+               @if (Model.GoodsType.MeasurementUnit == "kg")
+                {
+                    <span>(kilogram)</span>
+                }
+                else if (Model.GoodsType.MeasurementUnit == "piece")
+                {
+                    <span>(komad)</span>
+                }
+          
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.AmountOfGoods)
+            </dd>
+            <dt class="col-sm-2">
+                Cijena  
+                @if (Model.GoodsType.MeasurementUnit == "kg")
+                {
+                    <span>(KM/kilogram)</span>
+                }
+                else if (Model.GoodsType.MeasurementUnit == "piece")
+                {
+                    <span>(KM/komad)</span>
+                }
+               
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt class="col-sm-2">
+                Vrsta dobra: 
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.GoodsType.Name)
+            </dd>
+            <dt class="col-sm-2">
+                Proizvođač: 
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Manufacturer.FullName)
+            </dd>
+            <dt class="col-sm-2">
+                Vrsta biljke: 
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PlantType.Name)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <div class="btn back-to-list">
+                <a href="javascript:history.back()">Natrag</a>
+            </div>
+            <input type="submit" value="Izbrisati" class="btn edit-data-btn delete-btn" />
+        </form>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+﻿@model Eoranica.Models.Plant
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="row row-udpate_create mx-auto">
+    <div class="col-md-6 mx-auto col-update_create">
+        <h1>Detalji biljke</h1>
+
+        <dl class="row form-group-update_create">
+        <dt class = "col-sm-4">
+            Naziv:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-4">
+            Opis:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-4">
+            Naziv podvrste:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.SubspeciesName)
+        </dd>
+        <dt class = "col-sm-4">
+            Količina dobara koje biljka u prosjeku daje :
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.AmountOfGoods)
+                @if (Model.GoodsType.MeasurementUnit == "kg")
+                {
+                    <span>kilogram</span>
+                }
+                else if (Model.GoodsType.MeasurementUnit == "piece")
+                {
+                    <span>komad</span>
+                }
+        </dd>
+        <dt class = "col-sm-4">
+            Cijena:
+        </dt>
+        <dd class = "col-sm-8">
+                @Html.DisplayFor(model => model.Price) 
+                @if (Model.GoodsType.MeasurementUnit == "kg")
+                {
+                    <span>KM/kilogram</span>
+                }
+                else if (Model.GoodsType.MeasurementUnit == "piece")
+                {
+                    <span>KM/komad</span>
+                }
+        </dd>
+        <dt class = "col-sm-4">
+            Vrsta dobara:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.GoodsType.Name)
+          
+        </dd>
+        <dt class = "col-sm-4">
+            Proizvođač:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Manufacturer.FullName)
+         
+        </dd>
+        <dt class = "col-sm-4">
+            Vrsta biljke:
+        </dt>
+        <dd class = "col-sm-8">
+          @Html.DisplayFor(model => model.PlantType.Name)  
+          
+      </dd>
+      
+                                                               
+    </dl>
+    <div class="btn edit-data-btn">
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Uredi</a>
+    </div>
+    <div class="btn back-to-list">
+        <a href="javascript:history.back()">Natrag</a>
+    </div>
+</div>
+</div>
